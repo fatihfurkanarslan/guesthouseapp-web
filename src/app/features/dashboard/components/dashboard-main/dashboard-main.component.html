@@ -1,0 +1,18 @@
+<!-- src/app/features/dashboard/components/dashboard-main/dashboard-main.component.html -->
+<div class="dashboard-main">
+    <h1>Dashboard</h1>
+    
+    <div class="cards-container">
+      <!-- SummaryCard component'ini kullanarak özet kartlar oluşturuyoruz -->
+      <app-summary-card title="Toplam Rezervasyon" [content]="totalReservations"></app-summary-card>
+      <app-summary-card title="Güncel Misafir" [content]="currentGuests"></app-summary-card>
+      <app-summary-card title="Boş Odalar" [content]="availableRooms"></app-summary-card>
+      <app-summary-card title="Doluluk Oranı" [content]="occupancyRate + '%'"></app-summary-card>
+    </div>
+    
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="onNewReservation()">Yeni Rezervasyon Ekle</button>
+      <button mat-raised-button color="accent" (click)="onViewGuests()">Misafirleri Görüntüle</button>
+    </div>
+  </div>
+  

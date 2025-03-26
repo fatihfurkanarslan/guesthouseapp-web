@@ -1,0 +1,22 @@
+<!-- src/app/features/auth/components/login/login.component.html -->
+<!-- Bu dosya, login formunun HTML yapısını içerir. -->
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Eposta</mat-label>
+      <input matInput placeholder="Eposta" formControlName="eposta">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Şifre</mat-label>
+      <input matInput placeholder="Şifre" formControlName="password" type="password">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Giriş Yap</button>
+
+     <!-- Hata mesajı alanı -->
+  <div *ngIf="loginError" class="error-message">
+    {{ loginError }}
+  </div>
+  </form>
+  
