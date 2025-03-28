@@ -48,13 +48,14 @@ export class LoginComponent {
 
     this.authService.login(loginDto).subscribe({
       next: response => {
-        console.log(response.message + "" + response.data);
+        console.log('Login response:', response);
         
         if (response && response.success) {
           // Kullanıcı bilgilerini güncelle
-          if (response.data && response.data.user) {
+          console.log('Giriş başarılı:', response.data);
+          if (response.data) {
             //this.authService.setCurrentUser(response.data.user);
-            console.log('Giriş başarılı:', response.data.user);
+            console.log('Giriş başarılı:', response.data);
             this.router.navigate(['/dashboard']);
           } else {
             this.loginError = 'Kullanıcı bilgileri alınamadı';
