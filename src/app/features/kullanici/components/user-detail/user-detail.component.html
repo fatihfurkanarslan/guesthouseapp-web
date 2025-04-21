@@ -1,0 +1,51 @@
+<div class="user-detail-container">
+    <h2>Kullanıcı Düzenle (#{{ userId }})</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-detail-form">
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Ad Soyad</mat-label>
+        <input matInput formControlName="adSoyad" placeholder="Ad Soyad" />
+        <mat-error *ngIf="userForm.get('adSoyad')?.hasError('required')">
+          Ad Soyad girmeniz zorunlu
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>E-posta</mat-label>
+        <input matInput formControlName="eposta" placeholder="E-posta" />
+        <mat-error *ngIf="userForm.get('eposta')?.hasError('required')">
+          E-posta girmeniz zorunlu
+        </mat-error>
+        <mat-error *ngIf="userForm.get('eposta')?.hasError('email')">
+          Geçerli bir e-posta yazın
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">
+          <mat-option *ngFor="let r of roles" [value]="r">{{ r }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.get('rol')?.hasError('required')">
+          Rol seçmeniz zorunlu
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Birim ID</mat-label>
+        <input matInput type="number" formControlName="birimId" placeholder="Birim ID" />
+        <mat-error *ngIf="userForm.get('birimId')?.hasError('required')">
+          Birim ID girmeniz zorunlu
+        </mat-error>
+      </mat-form-field>
+  
+      <div class="form-actions">
+        <button mat-stroked-button type="button" (click)="onCancel()">İptal</button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="userForm.invalid">
+          Kaydet
+        </button>
+      </div>
+  
+    </form>
+  </div>
+  

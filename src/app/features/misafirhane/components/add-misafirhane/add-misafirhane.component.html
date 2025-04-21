@@ -1,0 +1,30 @@
+<div class="add-misafirhane-container">
+  <h2>Misafirhane Ekle</h2>
+  <form [formGroup]="misafirhaneForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Misafirhane Adı</mat-label>
+      <input matInput formControlName="ad" placeholder="Misafirhane adı" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Konum</mat-label>
+      <input matInput formControlName="konum" placeholder="Konum" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Birim</mat-label>
+      <mat-select formControlName="birim">
+        <mat-option *ngFor="let b of birimler" [value]="b.id">
+          {{ b.tanim }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="aktifMi">Aktif Mi?</mat-checkbox>
+
+    <div class="form-actions">
+      <button mat-flat-button color="primary" type="submit">Ekle</button>
+    </div>
+  </form>
+</div>

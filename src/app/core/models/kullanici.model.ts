@@ -7,5 +7,4 @@ export interface Kullanici {
     rol: string;
 
     kullaniciMisafirhaneler?: KullaniciMisafirhane[];
-  }
-  
+}

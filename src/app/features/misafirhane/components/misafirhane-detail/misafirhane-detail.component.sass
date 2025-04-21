@@ -1,0 +1,55 @@
+.misafirhane-detail-container
+  max-width: 500px
+  margin: 2.5rem auto
+  padding: 1.5rem 2rem
+  background-color: #fff
+  border: 1px solid #e0e0e0
+  border-radius: 8px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+
+  h2
+    text-align: center
+    margin-bottom: 1.5rem
+    font-size: 1.5rem
+    color: #003366
+
+.misafirhane-form
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+  mat-form-field
+    width: 100%
+
+    .mat-form-field-outline
+      border-color: #ccc
+
+    &:hover .mat-form-field-outline
+      border-color: #3f51b5
+
+  mat-checkbox
+    margin-top: 0.5rem
+
+.form-actions
+  display: flex
+  justify-content: flex-end
+  gap: 0.75rem
+  margin-top: 1rem
+
+  button
+    min-width: 100px
+    padding: 0.6rem 1.25rem
+    text-transform: none
+    transition: transform 0.1s ease, box-shadow 0.2s ease
+
+    &.mat-flat-button
+      background-color: #3f51b5
+      color: #fff
+
+    &.mat-stroked-button
+      border-color: #bbb
+      color: #555
+
+    &:hover
+      transform: translateY(-1px)
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)

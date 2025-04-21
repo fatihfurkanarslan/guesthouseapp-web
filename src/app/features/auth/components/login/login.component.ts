@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../core/services/auth.service';
-import { LoginDTO } from '../../../../core/dtos/login.dto';
+import { LoginDTO } from '../../../../core/dtos/auth/login.dto';
 import { CommonModule } from '@angular/common';
 
 @Component({

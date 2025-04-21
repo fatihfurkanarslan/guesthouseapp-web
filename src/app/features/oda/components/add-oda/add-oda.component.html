@@ -1,0 +1,34 @@
+<div class="add-oda-container">
+  <h2>Oda Ekle</h2>
+  <form [formGroup]="odaForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Misafirhane Seçin</mat-label>
+      <mat-select formControlName="misafirhaneId">
+        <mat-option *ngFor="let m of misafirhaneler" [value]="m.id">
+          {{ m.ad }} — {{ m.konum }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Oda Numarası</mat-label>
+      <input matInput placeholder="Örn: 101" formControlName="odaNumarasi" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Kapasite</mat-label>
+      <input matInput type="number" min="1" formControlName="kapasite" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Oda Türü</mat-label>
+      <input matInput placeholder="Örn: Suit, Normal" formControlName="odaTuru" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="aktifMi">Aktif Mi?</mat-checkbox>
+
+    <div class="form-actions">
+      <button mat-flat-button color="primary" type="submit">Oluştur</button>
+    </div>
+  </form>
+</div>

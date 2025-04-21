@@ -1,0 +1,23 @@
+<div class="make-reservation-container">
+    <h3>Yeni Rezervasyon Ekle</h3>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>Resource Index:</label>
+        <input matInput formControlName="resourceIndex" type="number" placeholder="Resource index">
+      </div>
+      <div>
+        <label>Rezervasyon Adı:</label>
+        <input matInput formControlName="name" placeholder="Rezervasyon adı">
+      </div>
+      <div>
+        <label>Başlangıç Tarihi:</label>
+        <input matInput formControlName="startDate" type="date">
+      </div>
+      <div>
+        <label>Bitiş Tarihi:</label>
+        <input matInput formControlName="endDate" type="date">
+      </div>
+      <button mat-raised-button color="primary" type="submit">Rezervasyonu Ekle</button>
+    </form>
+  </div>
+  

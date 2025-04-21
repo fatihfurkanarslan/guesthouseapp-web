@@ -1,0 +1,64 @@
+<div class="user-list">
+    <div class="header">
+      <h2>Kullanıcılar</h2>
+      <button mat-flat-button color="accent" (click)="router.navigate(['/users/add'])">
+        Yeni Kullanıcı Ekle
+      </button>
+    </div>
+  
+    <div class="search-bar">
+      <mat-form-field appearance="outline">
+        <mat-label>Ad Soyad Filtre</mat-label>
+        <input matInput [(ngModel)]="filterAdSoyad" (ngModelChange)="applyFilter()">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Birim Filtre</mat-label>
+        <input matInput [(ngModel)]="filterBirim" (ngModelChange)="applyFilter()">
+      </mat-form-field>
+    </div>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+        <!-- Ad Soyad Kolonu -->
+        <ng-container matColumnDef="adSoyad">
+          <th mat-header-cell *matHeaderCellDef>Ad Soyad</th>
+          <td mat-cell *matCellDef="let u">{{ u.adSoyad }}</td>
+        </ng-container>
+  
+        <!-- E-posta Kolonu -->
+        <ng-container matColumnDef="eposta">
+          <th mat-header-cell *matHeaderCellDef>E‑posta</th>
+          <td mat-cell *matCellDef="let u">{{ u.eposta }}</td>
+        </ng-container>
+  
+        <!-- Rol Kolonu -->
+        <ng-container matColumnDef="rol">
+          <th mat-header-cell *matHeaderCellDef>Rol</th>
+          <td mat-cell *matCellDef="let u">{{ u.rol }}</td>
+        </ng-container>
+  
+        <!-- Birim Kolonu -->
+        <ng-container matColumnDef="birimKod">
+          <th mat-header-cell *matHeaderCellDef>Birim</th>
+          <td mat-cell *matCellDef="let u">{{ u.birimKod }}</td>
+        </ng-container>
+  
+        <!-- İşlemler Kolonu -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let u">
+            <button mat-icon-button color="primary" (click)="onEdit(u)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <!-- Header ve Row Tanımları -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row        *matRowDef="let row; columns: displayedColumns"></tr>
+  
+      </table>
+    </div>
+  </div>
+  

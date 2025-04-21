@@ -1,0 +1,26 @@
+<form [formGroup]="odaForm" (ngSubmit)="onSubmit()" class="oda-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Oda Numarası</mat-label>
+      <input matInput formControlName="odaNumarasi" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Kapasite</mat-label>
+      <input matInput type="number" formControlName="kapasite" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Oda Türü</mat-label>
+      <input matInput formControlName="odaTuru" />
+    </mat-form-field>
+  
+    <mat-checkbox formControlName="aktifMi">Aktif Mi?</mat-checkbox>
+  
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Güncelle</button>
+      <button mat-stroked-button type="button" (click)="router.navigate(['/oda/list'])">
+        İptal
+      </button>
+    </div>
+  </form>
+  

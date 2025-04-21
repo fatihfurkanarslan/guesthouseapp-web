@@ -1,0 +1,54 @@
+// src/app/features/kullanici/components/add-user/add-user.component.sass
+
+.add-user-form
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  max-width: 400px
+  margin: 2.5rem auto
+  padding: 1.5rem
+  background-color: #fff
+  border-radius: 8px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+
+  mat-form-field
+    width: 100%
+
+    // Outline rengini hafif göster, hover’da vurgula
+    .mat-form-field-outline
+      border-color: #ccc
+
+    &:hover .mat-form-field-outline
+      border-color: #3f51b5
+
+    .mat-form-field-label
+      color: #555
+
+  // Checkbox biraz yukarıda hizalansın
+  mat-checkbox
+    margin-top: 0.5rem
+
+  .form-actions
+    display: flex
+    justify-content: flex-end
+    gap: 0.75rem
+    margin-top: 1.5rem
+
+    button
+      padding: 0.6rem 1.5rem
+      font-size: 0.95rem
+      text-transform: none
+      transition: transform 0.1s ease, box-shadow 0.2s ease
+
+      &.save
+        background-color: #3f51b5
+        color: #fff
+
+      &.cancel
+        background-color: transparent
+        border: 1px solid #bbb
+        color: #555
+
+      &:hover
+        transform: translateY(-1px)
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)

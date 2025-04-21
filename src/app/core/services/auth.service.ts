@@ -6,11 +6,11 @@ import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 
-import { ApiResponse } from '../dtos/api-response.dto';
+import { ApiResponse } from '../dtos/auth/api-response.dto';
 //test env.
 import { environment } from '../../../environment';
-import { LoginDTO } from '../dtos/login.dto';
-import { LoginResultDto } from '../dtos/login-result.dto';
+import { LoginDTO } from '../dtos/auth/login.dto';
+import { LoginResultDto } from '../dtos/auth/login-result.dto';
 
 
 @Injectable({

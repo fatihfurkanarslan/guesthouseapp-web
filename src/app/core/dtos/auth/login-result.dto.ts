@@ -4,6 +4,7 @@ export interface LoginResultDto {
     adSoyad: string;
     eposta: string;
     role: string;
+    birim: string;
     token: string;
   }
   
